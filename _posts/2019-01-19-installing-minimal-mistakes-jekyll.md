@@ -262,7 +262,11 @@ So why did this happen in the first place? Why are there 3 different installatio
 
 I think the problem here is *flexibility*. I mean, it's not a bad thing, I use linux and have some fundamental ethos about being able to tinker with all the things.
 
-But, the quick start guide wasn't written poorly, the ability to host things in different places is a nice thing, getting a remote theme is a nice *idea*. But... it doesn't work. My internet is too shit to use a remote theme, Github Pages can't use the gemfile method for reasons, so either I host somewhere else (I considered it), so I just fork the theme which specifies a version for a build and have to randomly change a value in order for it to work the way I want.
+But, the quick start guide wasn't written poorly, the ability to host things in different places is a nice thing, getting a remote theme is a nice *idea*. 
+
+But... it doesn't work. 
+
+My internet is too shit to use a remote theme, Github Pages can't use the gemfile method for reasons, so either I host somewhere else (I considered it), so I just fork the theme which specifies a version for a build and have to randomly change a value in order for it to work the way I want.
 
 Conclusion: everything is broken and everything is hard. I don't know how to fix, but this is just one tiny example it just not working for no reason.
 
