@@ -203,3 +203,67 @@ Plus, that build time makes me want to punch people. So it might be that I'll ha
 I care about not wanting to punch stuff, so I might just do that. Plus, I'll want to edit some stuff anyway, so this remote stuff is a kind of nice idea, but also actually just annoying. 
 
 The internet is not that good just yet that we can treat everything is on a LAN, not in Australia anyway.
+
+So what's a nerd gonna do? It's obvious right, let's fork the `minimal-mistakes` repo, run all the files locally, and not set a theme at all!
+
+... *insert long waiting period here for the files to download* ...
+
+... and it works! Pushes to Github pages, it's up, it's toally sweet. Let's try and build it locally, this is why we forked it after all:
+
+```bash
+$ bundle exec jekyll serve
+Could not find gem 'rake (~> 10.0)' in any of the gem sources listed in your Gemfile.
+Run `bundle install` to install missing gems.
+```
+Uh oh....
+
+ok, let's run `bundle`
+
+```bash
+Fetching gem metadata from https://rubygems.org/..........
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Bundler could not find compatible versions for gem "bundler":
+  In Gemfile:
+    bundler (~> 1.15)
+
+  Current Bundler version:
+    bundler (2.0.1)
+This Gemfile requires a different version of Bundler.
+Perhaps you need to update Bundler by running `gem install bundler`?
+
+Could not find gem 'bundler (~> 1.15)' in any of the relevant sources:
+  the local ruby installation
+```
+
+...wat? You want a bundler version that's old? Srsly? 🤦‍♂️
+
+Ok maybe it's just me, probs not meant to fork it and expect it to "just work", it build on Github Pages fine, but my local stuff isn't installed.
+
+Let's look at the `Gemfile`
+```ruby
+source "https://rubygems.org"
+gemspec
+```
+Hmmm, what is a `gemspec`? There's a file: `minimal-mistakes-jekyll.gemspec`, interesting...
+
+```
+  spec.add_development_dependency "bundler", "~> 1.15"
+```
+what happens if I delete the version?
+```
+  spec.add_development_dependency "bundler"
+```
+
+... it works! YAY! And builds in 2 seconds, technology!
+
+
+So why did this happen in the first place? Why are there 3 different installation options that I need to learn/understand just in order to install a theme on a blog?
+
+I think the problem here is *flexibility*. I mean, it's not a bad thing, I use linux and have some fundamental ethos about being able to tinker with all the things.
+
+But, the quick start guide wasn't written poorly, the ability to host things in different places is a nice thing, getting a remote theme is a nice *idea*. But... it doesn't work. My internet is too shit to use a remote theme, Github Pages can't use the gemfile method for reasons, so either I host somewhere else (I considered it), so I just fork the theme which specifies a version for a build and have to randomly change a value in order for it to work the way I want.
+
+Conclusion: everything is broken and everything is hard. I don't know how to fix, but this is just one tiny example it just not working for no reason.
+
+It's okay though, the whole world is like that. It's not just us.
