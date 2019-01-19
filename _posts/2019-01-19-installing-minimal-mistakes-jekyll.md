@@ -157,7 +157,9 @@ Make sure to uncomment the `theme: ` line
 theme                    : "minimal-mistakes-jekyll"
 ```
 
-Boo ya! That works and displays all the things. Ok, settings not code is good. But which one was it? Do I even care? To be honest, not really.
+Boo ya! That works and displays all the things. Ok, settings must be the problem then. But which one was it? Do I even care? 
+
+To be honest, not really.
 
 What is a setting that looks like it could be a thing that loads a site sensibly? That _wasn't_ there by default.
 
@@ -191,7 +193,7 @@ done in 303.062 seconds.
 🤦‍♂️
 
 Looking at the Quick-start guide it says "Remote themes are similar to Gem-based themes, but do not require Gemfile changes or whitelisting making them ideal for sites hosted with GitHub Pages."
-*... blank white page ...*
+
 ... and it doesn't say...
 
 "in order to host on Github Pages you **must** use a `remote_theme` or fork the repo." Although to be fair it's not up to the theme to tell everyone how Github works. Just for a n00b like me, it would have been helpful. That's all.
@@ -236,9 +238,11 @@ Could not find gem 'bundler (~> 1.15)' in any of the relevant sources:
   the local ruby installation
 ```
 
-...wat? You want a bundler version that's old? Srsly? 🤦‍♂️
+...wat? 
 
-Ok maybe it's just me, probs not meant to fork it and expect it to "just work", it build on Github Pages fine, but my local stuff isn't installed.
+You want a bundler version that's old? Srsly? 🤦‍♂️
+
+Ok maybe it's just me, probs not meant to fork it and expect it to "just work", it builds on Github Pages fine, but my local stuff isn't installed.
 
 Let's look at the `Gemfile`
 ```ruby
@@ -255,8 +259,7 @@ what happens if I delete the version?
   spec.add_development_dependency "bundler"
 ```
 
-... it works! YAY! And builds in 2 seconds, technology!
-
+... it works! YAY! And builds in 2 seconds, OMG technology!
 
 So why did this happen in the first place? Why are there 3 different installation options that I need to learn/understand just in order to install a theme on a blog?
 
@@ -268,6 +271,6 @@ But... it doesn't work.
 
 My internet is too shit to use a remote theme, Github Pages can't use the gemfile method for reasons, so either I host somewhere else (I considered it), so I just fork the theme which specifies a version for a build and have to randomly change a value in order for it to work the way I want.
 
-Conclusion: everything is broken and everything is hard. I don't know how to fix, but this is just one tiny example it just not working for no reason.
+Conclusion: everything is broken and everything is hard. I don't know how to fix, but t1his is just one tiny example it just not working for no reason.
 
 It's okay though, the whole world is like that. It's not just us.
